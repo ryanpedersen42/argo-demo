@@ -1,0 +1,17 @@
+version: 2.1
+
+jobs:
+  build:
+    executor: base
+    steps:
+      - checkout
+
+workflows:
+  build_test_deploy:
+    jobs:
+      - build
+
+executors:
+  base:
+    docker: 
+      - image: cimg/base:stable
