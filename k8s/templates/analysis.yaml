@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: success-rate
+spec:
+  args:
+  - name: deployment-demo
+  metrics:
+  - name: test
+      provider:
+        job:
+          spec:
+            backoffLimit: 1
+            template:
+              spec:
+                containers:
+                - name: test
+                  image: my-image:latest
+                  command: [curl localhost:8080]
+                restartPolicy: Never
+    
