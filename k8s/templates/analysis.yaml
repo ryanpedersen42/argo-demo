@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
-kind: AnalysisTemplate
+kind: AnalysisRun
 metadata:
   name: success-rate
 spec:
   args:
-  - name: deployment-demo
+  - name: service-name
   metrics:
   - name: test
       provider:
