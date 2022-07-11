@@ -1,10 +1,16 @@
 
-kind: Deployment # keeps tabs on pods and make sure all is well
-apiVersion: apps/v1 # which version of the API you are going to create
+kind: Rollout
+apiVersion: argoproj.io/v1alpha1
 metadata: # data to help you identify the object
   name: deployment-demo
 spec: # here's what the deployment is going to create
   replicas: 1 # spec.replica >> 2 replica pods
+  strategy:
+    canary:
+      steps:
+        - pause: { duration: 30 }
+        - pause: { duration: 30 }
+        - pause: { duration: 10 }
   selector: # spec.selector >> how the deployment finds the pods to manage
     matchLabels:
       app: deployment-demo # simple way to select label, whcih is defined in pod template below
