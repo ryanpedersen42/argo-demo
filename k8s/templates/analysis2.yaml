@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AnalysisRun
 metadata:
-  name: deployment-demo-CurrentPodHash-multiple-templates
+  name: deployment-demo-ar
 spec:
   args:
   - name: service-name
