@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AnalysisRun
 metadata:
-  name: guestbook-CurrentPodHash-multiple-templates
+  name: deployment-demo-CurrentPodHash-multiple-templates
 spec:
   args:
   - name: service-name
-    value: guestbook-svc.default.svc.cluster.local
+    value: deployment-demo.default.svc.cluster.local
   metrics:
   - name: success-rate
     interval: 5m
