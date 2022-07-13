@@ -7,6 +7,6 @@ spec: # what it will create
   selector: # scans for pods that match this selector
     app: deployment-demo 
   ports:
-    - port: 8080 # exposes service on this port
+    - port: 9000 # exposes service on this port
       targetPort: 80
       protocol: TCP # default protocol for Services
