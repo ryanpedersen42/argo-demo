@@ -28,7 +28,7 @@ spec: # here's what the deployment is going to create
     spec: # what each pod will do
       containers: # create a container
         - name: deployment-demo # container named deployment-demo
-          image: ryanpedersen42/deployment-demo:caaanary # here's the container to use
+          image: ryanpedersen42/deployment-demo:canary # here's the container to use
           imagePullPolicy: Always # [Optional // can also omit] Every time container is launched, kubelet queries registry.
           ports:
             - containerPort: 80 # port to expose (our image and nginx both use port 80)
