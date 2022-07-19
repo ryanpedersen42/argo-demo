@@ -4,6 +4,8 @@ apiVersion: argoproj.io/v1alpha1
 metadata: # data to help you identify the object
   name: deployment-demo
 spec: # here's what the deployment is going to create
+  progressDeadlineAbort: false
+  progressDeadlineSeconds: 5
   replicas: 5 # spec.replica >> 2 replica pods
   strategy:
     canary:
@@ -26,7 +28,7 @@ spec: # here's what the deployment is going to create
     spec: # what each pod will do
       containers: # create a container
         - name: deployment-demo # container named deployment-demo
-          image: ryanpedersen42/deployment-demo:canaary # here's the container to use
+          image: ryanpedersen42/deployment-demo:canary # here's the container to use
           imagePullPolicy: Always # [Optional // can also omit] Every time container is launched, kubelet queries registry.
           ports:
             - containerPort: 80 # port to expose (our image and nginx both use port 80)
