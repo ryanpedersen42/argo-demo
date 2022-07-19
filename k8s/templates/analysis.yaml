@@ -17,7 +17,7 @@ spec:
               containers:
               - name: test
                 image: busybox:latest
-                command: [curl -sSL "http://google.com", deployment-demo.argo-demo.svc.cluster.local]
+                command: [curl -sSL "http://google.com"]
               restartPolicy: Never
   # metrics:
   # - name: webmetric
