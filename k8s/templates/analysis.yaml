@@ -17,7 +17,7 @@ spec:
               containers:
               - name: test
                 image: ryanpedersen42/deployment-demo:canary
-                command: [#!/bin/bash exit 0, deployment-demo.argo-demo.svc.cluster.local]
+                command: [chmod u+x hello-world.sh && ./hello-world.sh, deployment-demo.argo-demo.svc.cluster.local]
               restartPolicy: Never
   # metrics:
   # - name: webmetric
